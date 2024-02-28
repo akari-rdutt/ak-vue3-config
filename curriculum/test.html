@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <title>Vue Component Example</title>
+</head>
+<body>
+    <div>Component SHould be Below</div>
+
+  <div id="app">
+    {{message}}
+    <HelloWorld/>
+  </div>
+
+  <!-- Include the compiled JavaScript file -->
+  <script src="custominterfaces/helloworld/HelloWorld.js"></script>
+  <script src="custominterfaces/helloworld/HelloWorld.vue"></script>
+
+  <script>
+    // Mount the Vue component
+    const app = Vue.createApp({data () {
+            return {
+                message: 'Hello World From HTML'
+            }
+        },})
+    app.component('HelloWorld', HelloWorld)
+    app.mount('#app')
+</script>
+
+  <!-- <script>
+    // Mount your Vue component in HTML
+    const { createApp } = Vue;
+    const app = createApp({
+        // Your component options
+        data () {
+            return {
+                message: 'Hello World From HTML'
+            }
+        },
+    });
+    app.mount('#app'); // Mount your component in the specified DOM element
+  </script> -->
+</body>
+</html>
